@@ -1,6 +1,6 @@
 {
-  "name": "iPapkorn",
-  "short_name": "iPapkorn",
+  "name": "RajasthaniFlix",
+  "short_name": "RajasthaniFlix",
   "description": "Your Movie Recommendation System - Discover new movies with our Telegram community",
   "start_url": "/",
   "display": "standalone",
