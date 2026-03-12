@@ -8,7 +8,7 @@ param(
 )
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  iPapkorn Telegram Stats Update Test  " -ForegroundColor Cyan
+Write-Host "  RajasthaniFlix Telegram Stats Update Test  " -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -16,7 +16,7 @@ Write-Host ""
 Write-Host "[1/4] Fetching Telegram channel data..." -ForegroundColor Yellow
 
 try {
-    $response = Invoke-WebRequest -Uri "https://t.me/s/iPapkorn" -UseBasicParsing
+    $response = Invoke-WebRequest -Uri "https://t.me/RajasthaniFlix" -UseBasicParsing
     $html = $response.Content
     Write-Host "  OK - Successfully fetched channel page" -ForegroundColor Green
 }
@@ -39,7 +39,7 @@ else {
 }
 
 # Extract post IDs
-$postMatches = [regex]::Matches($html, 'data-post="iPapkorn/(\d+)"')
+$postMatches = [regex]::Matches($html, 'data-post="RajasthaniFlix/(\d+)"')
 $postIds = $postMatches | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Descending -Unique | Select-Object -First 3
 
 $postCountK = $null
