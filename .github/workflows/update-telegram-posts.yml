@@ -21,7 +21,7 @@ jobs:
         id: fetch-data
         run: |
           # Fetch the public Telegram channel page
-          HTML=$(curl -s "https://t.me/s/iPapkorn")
+          HTML=$(curl -s "https://t.me/RajasthaniFlix")
           
           # Extract subscriber count (format: "2.48M subscribers" or "2480000 subscribers")
           SUBSCRIBERS=$(echo "$HTML" | grep -oP '[\d.]+[KMB]?\s*subscribers' | head -1 | grep -oP '^[\d.]+[KMB]?')
@@ -32,7 +32,7 @@ jobs:
           fi
           
           # Get the last post ID to calculate approximate post count
-          LAST_POST_ID=$(echo "$HTML" | grep -oP 'data-post="iPapkorn/\K[0-9]+' | sort -rn | head -1)
+          LAST_POST_ID=$(echo "$HTML" | grep -oP 'data-post="RajasthaniFlix/\K[0-9]+' | sort -rn | head -1)
           
           # Format post count in K format
           if [ -n "$LAST_POST_ID" ]; then
@@ -40,7 +40,7 @@ jobs:
           fi
           
           # Extract post IDs for recent posts widget (get latest 3)
-          POST_IDS=$(echo "$HTML" | grep -oP 'data-post="iPapkorn/\K[0-9]+' | sort -rn | head -3)
+          POST_IDS=$(echo "$HTML" | grep -oP 'data-post="RajasthaniFlix/\K[0-9]+' | sort -rn | head -3)
           readarray -t IDS <<< "$POST_IDS"
           
           # Extract view counts for the latest posts
